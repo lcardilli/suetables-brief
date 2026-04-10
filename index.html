@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suetables · Founder Video Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F9F5EF;
+    --warm-white: #FDFAF6;
+    --ink: #1C1816;
+    --muted: #8A7F74;
+    --gold: #B8935A;
+    --gold-light: #E8D5B4;
+    --border: rgba(28,24,22,0.1);
+    --script-1: #2C2420;
+    --script-2: #2C2420;
+    --script-3: #2C2420;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 56px 48px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .brand-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-mark::before, .brand-mark::after {
+    content: '';
+    flex: 0 0 32px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 6vw, 58px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  header h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .header-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .meta-item {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: rgba(249,245,239,0.55);
+    text-transform: uppercase;
+  }
+  .meta-item strong {
+    display: block;
+    color: rgba(249,245,239,0.85);
+    font-weight: 400;
+    margin-bottom: 2px;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 13px;
+  }
+
+  /* ── Layout ── */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 48px 80px;
+  }
+
+  section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 4vw, 34px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: #3D3530;
+    max-width: 640px;
+    margin-bottom: 14px;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── Formula ── */
+  .formula-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 32px;
+  }
+  .formula-step {
+    background: var(--warm-white);
+    padding: 24px 20px;
+    position: relative;
+  }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .step-time {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .step-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .step-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  /* ── Production tips ── */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .tip-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 18px 16px;
+  }
+  .tip-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .tip-icon svg { width: 14px; height: 14px; fill: var(--gold); }
+  .tip-card p {
+    font-size: 13px;
+    color: var(--ink);
+    max-width: none;
+    margin: 0;
+    line-height: 1.45;
+  }
+
+  /* ── Scripts ── */
+  .scripts-intro {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  .scripts-intro p { flex: 1; min-width: 260px; }
+
+  .script-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .script-header {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 20px 28px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .script-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+  .script-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    flex: 1;
+  }
+  .script-title em { font-style: italic; color: var(--gold); }
+  .script-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 2px;
+    font-weight: 400;
+  }
+  .badge-tone {
+    background: rgba(184,147,90,0.2);
+    color: var(--gold);
+    border: 1px solid rgba(184,147,90,0.3);
+  }
+  .badge-dur {
+    background: rgba(249,245,239,0.08);
+    color: rgba(249,245,239,0.5);
+    border: 1px solid rgba(249,245,239,0.12);
+  }
+
+  .script-body { padding: 28px; }
+
+  .beat {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--border);
+    align-items: start;
+  }
+  .beat:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .beat-label {
+    text-align: right;
+    padding-top: 2px;
+  }
+  .beat-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 3px;
+  }
+  .beat-time {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+  .beat-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  .director-note {
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: rgba(184,147,90,0.06);
+    border-left: 2px solid var(--gold);
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.55;
+    border-radius: 0 3px 3px 0;
+  }
+  .director-note strong {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ── Shot guide ── */
+  .shot-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 28px;
+    font-size: 13px;
+  }
+  .shot-table thead th {
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    padding: 0 16px 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .shot-table tbody td {
+    padding: 16px 16px 16px 0;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+    color: #3D3530;
+    line-height: 1.5;
+  }
+  .shot-table tbody tr:last-child td { border-bottom: none; }
+  .shot-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-right: 20px !important;
+    width: 60px;
+  }
+  .shot-timing {
+    color: var(--muted);
+    white-space: nowrap;
+    width: 72px;
+  }
+  .shot-label {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--ink);
+    color: rgba(249,245,239,0.45);
+    text-align: center;
+    padding: 36px 24px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 680px) {
+    header, main { padding-left: 24px; padding-right: 24px; }
+    .formula-grid { grid-template-columns: repeat(2, 1fr); }
+    .beat { grid-template-columns: 72px 1fr; }
+    .script-header { flex-wrap: wrap; gap: 8px; }
+  }
+  @media (max-width: 420px) {
+    .formula-grid { grid-template-columns: 1fr 1fr; }
+    .beat { grid-template-columns: 1fr; }
+    .beat-label { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand-mark">suetables</div>
+    <h1>Founder Video<br><em>Brief</em></h1>
+    <div class="header-meta">
+      <div class="meta-item"><strong>Signature Collection</strong>Campaign</div>
+      <div class="meta-item"><strong>Meta Social Ads</strong>Platform</div>
+      <div class="meta-item"><strong>15–20 Second Talking Head</strong>Format</div>
+      <div class="meta-item"><strong>April 2026</strong>Date</div>
+      <div class="meta-item"><strong>Sue Henderson</strong>Prepared for</div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- About -->
+  <section>
+    <div class="section-label">About the collection</div>
+    <h2>The Suetables Signature Line</h2>
+    <p>Rooted in storytelling and handcrafted in Montreal, the Suetables Signature line is a collection of timeless, customizable jewelry inspired by vintage and old-world design.</p>
+    <p>Every design is hand-sketched, carved in wax, cast in real gold or silver, and finished with genuine stones and recycled metals. Small treasures, made for connection.</p>
+  </section>
+
+  <!-- Formula -->
+  <section>
+    <div class="section-label">The winning formula</div>
+    <h2>Built to stop the scroll<br>and drive to purchase</h2>
+    <p>Every script follows this four-part structure — consistent across all three videos regardless of audience.</p>
+    <div class="formula-grid">
+      <div class="formula-step">
+        <div class="step-num">01</div>
+        <div class="step-time">0 – 3s</div>
+        <div class="step-title">Hook</div>
+        <div class="step-desc">Stop the scroll</div>
+      </div>
+      <div class="formula-step">
+        <div class="step-num">02</div>
+        <div class="step-time">3 – 10s</div>
+        <div class="step-title">Personal truth</div>
+        <div class="step-desc">Build emotional connection</div>
+      </div>
+      <div class="formula-step">
+        <div class="step-num">03</div>
+        <div class="step-time">10 – 16s</div>
+        <div class="step-title">Product reveal</div>
+        <div class="step-desc">Show the piece + what makes it special</div>
+      </div>
+      <div class="formula-step">
+        <div class="step-num">04</div>
+        <div class="step-time">16 – 20s</div>
+        <div class="step-title">CTA</div>
+        <div class="step-desc">Clear, direct, low-friction action</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Production tips -->
+  <section>
+    <div class="section-label">Universal production tips</div>
+    <h2>How to shoot</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon"><svg viewBox="0 0 16 16"><rect x="5" y="1" width="6" height="10" rx="3"/><rect x="2" y="12" width="12" height="1.5" rx="0.75"/><rect x="6.5" y="11" width="3" height="2" rx="0.5"/></svg></div>
+        <p>Shoot vertical (9:16) — optimised for Reels and Stories on Meta</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 4v4l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <p>Handheld, slightly imperfect — feels authentic. Trust beats polish at this price tier</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon"><svg viewBox="0 0 16 16"><circle cx="8" cy="5" r="3"/><path d="M3 14c0-3 2-5 5-5s5 2 5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+        <p>Sue wears the piece throughout — product visible from second one</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="4"/><circle cx="8" cy="8" r="1.5"/></svg></div>
+        <p>Close-up on charm 3–4 seconds — let the craftsmanship speak</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon"><svg viewBox="0 0 16 16"><path d="M2 8c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6-6-2.7-6-6z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 8h6M8 5v6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+        <p>No music needed — voice-only builds more trust at this price tier</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon"><svg viewBox="0 0 16 16"><rect x="2" y="4" width="12" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 8h8M4 11h5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <p>Captions always on — 85% of Meta ads are watched without sound</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <section>
+    <div class="section-label">The scripts</div>
+    <h2>Three angles. One collection.<br>Running simultaneously.</h2>
+    <p style="margin-bottom: 8px;">All three videos run simultaneously as Meta ads. Each speaks to a different audience mindset — no overlap, no ad fatigue.</p>
+
+    <!-- Script 1 -->
+    <div class="script-card" style="margin-top: 40px;">
+      <div class="script-header">
+        <span class="script-num">Script 01</span>
+        <span class="script-title"><em>"I Made This For You"</em> — The Origin Story</span>
+        <div class="script-badges">
+          <span class="badge badge-tone">Warm &amp; Intimate</span>
+          <span class="badge badge-dur">~17 seconds</span>
+        </div>
+      </div>
+      <div class="script-body">
+        <div class="beat">
+          <div class="beat-label"><span class="beat-tag">Hook</span><span class="beat-time">0–3s</span></div>
+          <div class="beat-line">"I want to show you something I've been working on for a long time."</div>
+        </div>
+        <div class="beat">
+          <div class="beat-label"><span class="beat-tag">Truth</span><span class="beat-time">3–10s</span></div>
+          <div class="beat-line">"Twenty years ago I started Suetables at my kitchen table. The Signature line is the most personal thing I've ever created."</div>
+        </div>
+        <div class="beat">
+          <div class="beat-label"><span class="beat-tag">Reveal</span><span class="beat-time">10–16s</span></div>
+          <div class="beat-line">"Every design is hand-sketched, carved in wax, and cast in real gold or silver in Montreal. Each one takes time — which means only so many exist."</div>
+        </div>
+        <div class="beat">
+          <div class="beat-label"><span class="beat-tag">CTA</span><span class="beat-time">16–20s</span></div>
+          <div class="beat-line">"Shop the Signature line while it's available — link is right below."</div>
+        </div>
+        <div class="director-note">
+          <strong>Director's note</strong>
+          Cold audiences. Leads with Sue's vulnerability. Scarcity lands as a natural consequence of craft — never as pressure. Film in-store or at home in warm natural light.
+        </div>
+      </div>
+    </div>
+
+    <!-- Script 2 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">Script 02</span>
+        <span class="script-title"><em>"This Isn't Like Other Jewelry"</em> — The Craft</span>
+        <div class="script-badges">
+          <span class="badge badge-tone">Direct &amp; Credible</span>
+          <span class="badge badge-dur">~16 seconds</span>
+        </div>
+      </div>
+      <div class="script-body">
+        <div class="beat">
+          <div class="beat-label"><span class="beat-tag">Hook</span><span class="beat-time">0–3s</span></div>
+          <div class="beat-line">"This charm didn't come from a factory."</div>
+        </div>
+        <div class="beat">
+          <div class="beat-label"><span class="beat-tag">Truth</span><span class="beat-time">3–10s</span></div>
+          <div class="beat-line">"Every design is hand-sketched. Carved in wax. Cast in gold. Finished with real stones and recycled metals. You can't rush that process."</div>
+        </div>
+        <div class="beat">
+          <div class="beat-label"><span class="beat-tag">Reveal</span><span class="beat-time">10–16s</span></div>
+          <div class="beat-line">"This is the Suetables Signature line — handcrafted in Montreal in small batches. When a design is gone, it's gone."</div>
+        </div>
+        <div class="beat">
+          <div class="beat-label"><span class="beat-tag">CTA</span><span class="beat-time">16–20s</span></div>
+          <div class="beat-line">"Discover the collection — and don't wait too long. Link is right there."</div>
+        </div>
+        <div class="director-note">
+          <strong>Director's note</strong>
+          Retargeting or craft-aware audiences. Scarcity is explicit here — "small batches" and "when it's gone, it's gone." Film in-store near the display with charm held in hand.
+        </div>
+      </div>
+    </div>
+
+    <!-- Script 3 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">Script 03</span>
+        <span class="script-title"><em>"Wear Something That Means Something"</em> — The Meaning</span>
+        <div class="script-badges">
+          <span class="badge badge-tone">Emotional &amp; Gift-Coded</span>
+          <span class="badge badge-dur">~18 seconds</span>
+        </div>
+      </div>
+      <div class="script-body">
+        <div class="beat">
+          <div class="beat-label"><span class="beat-tag">Hook</span><span class="beat-time">0–3s</span></div>
+          <div class="beat-line">"Most jewelry ends up forgotten in a drawer. This isn't."</div>
+        </div>
+        <div class="beat">
+          <div class="beat-label"><span class="beat-tag">Truth</span><span class="beat-time">3–10s</span></div>
+          <div class="beat-line">"This collection was made to hold the things that matter — the names you carry, the moments you don't want to forget, the people who shaped you."</div>
+        </div>
+        <div class="beat">
+          <div class="beat-label"><span class="beat-tag">Reveal</span><span class="beat-time">10–16s</span></div>
+          <div class="beat-line">"The Suetables Signature line. Hand-carved in Montreal, customizable with birthstones and initials. Each piece is made to order — not sitting on a shelf waiting."</div>
+        </div>
+        <div class="beat">
+          <div class="beat-label"><span class="beat-tag">CTA</span><span class="beat-time">16–20s</span></div>
+          <div class="beat-line">"If you've been thinking about it, now is the time. Find the perfect piece — link below."</div>
+        </div>
+        <div class="director-note">
+          <strong>Director's note</strong>
+          Gift-purchase driver. "Made to order" creates urgency around lead time without feeling like pressure. Film in-store with Sue holding piece near heart, warm ambient light.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shot guide -->
+  <section>
+    <div class="section-label">Shot-by-shot guide</div>
+    <h2>Apply to any script</h2>
+    <table class="shot-table">
+      <thead>
+        <tr>
+          <th style="width:50px">Shot</th>
+          <th style="width:70px">Timing</th>
+          <th style="width:120px">Beat</th>
+          <th>Direction</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="shot-num">1</td>
+          <td class="shot-timing">0–2s</td>
+          <td><span class="shot-label">Hook</span></td>
+          <td>Sue looks directly to camera. No intro. Start mid-sentence if possible. Eye contact = scroll stop.</td>
+        </tr>
+        <tr>
+          <td class="shot-num">2</td>
+          <td class="shot-timing">2–10s</td>
+          <td><span class="shot-label">Personal truth</span></td>
+          <td>Maintain talking head. Frame tight — chest up. Slight lean forward. Warm light on face.</td>
+        </tr>
+        <tr>
+          <td class="shot-num">3</td>
+          <td class="shot-timing">10–14s</td>
+          <td><span class="shot-label">Product reveal</span></td>
+          <td>Cut to extreme close-up of charm in warm light. Show texture, engraving, stone. Then back to Sue.</td>
+        </tr>
+        <tr>
+          <td class="shot-num">4</td>
+          <td class="shot-timing">14–20s</td>
+          <td><span class="shot-label">CTA</span></td>
+          <td>Sue finishes holding the piece visibly. Final 1–2s: hold on product against linen or stone surface.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  Three stories. One shoot day. Go make them. &nbsp;·&nbsp; Phone camera. Warm light. Sue wearing the piece. &nbsp;·&nbsp; <a href="https://suetables.com">suetables.com</a>
+</footer>
+
+</body>
+</html>
