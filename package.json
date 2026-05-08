@@ -1,0 +1,8 @@
+{
+  "name": "suetables-brief",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@vercel/functions": "^3.5.0"
+  }
+}
